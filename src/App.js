@@ -6,7 +6,7 @@ function App() {
   const centerDiv = {
     display: "flex",
     alignItems: "center",
-    justifyContent: "space-between",
+    justifyContent: "center",
     flexDirection: "column",
     height: "100vh",
   };
@@ -23,8 +23,11 @@ function App() {
         This is my first React JS Application
       </p>
       <div style={header}>
-        <MyFirstComponent />
-        <MySecondComponent />
+        <MyFirstComponent
+          name="John Doe"
+          description="who is a professional developer and a writer"
+        />
+        <MySecondComponent age="20" exam="Mathematics Exam" />
       </div>
     </div>
   );
