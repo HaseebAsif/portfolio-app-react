@@ -2,18 +2,29 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [counter, setCounter] = useState(0);
+  const [submitting, setSubmitting] = useState(false);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setSubmitting(true);
 
-  const incrementCounter = () => {
-    for (let index = 0; index < 10; index++) {
-      setCounter((preCounter) => preCounter + 1);
-    }
+    setTimeout(() => {
+      setSubmitting(false);
+    }, 3000);
   };
 
   return (
     <div className="App">
-      <h1>Counter: {counter}</h1>
-      <button onClick={incrementCounter}>Increment</button>
+      <h1>How About them Them Apples</h1>
+      {submitting && <div>Submitting Form...</div>}
+      <form onSubmit={handleSubmit}>
+        <fieldset>
+          <label htmlFor="">
+            <p>Name</p>
+            <input type="text" name="name" />
+          </label>
+        </fieldset>
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 }
