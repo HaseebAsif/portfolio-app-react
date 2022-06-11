@@ -1,34 +1,25 @@
+import { useState } from "react";
 import "./App.css";
-import MyFirstComponent from "./componenets/myFirstComponent";
-import MySecondComponent from "./componenets/mySecondComponent";
 
 function App() {
-  const centerDiv = {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    flexDirection: "column",
-    height: "100vh",
-  };
+  const [bgColor, setBgColor] = useState("red");
 
-  const header = {
-    backgroundColor: "yellow",
+  const turnGreen = () => {
+    setBgColor("green");
+  };
+  const reset = () => {
+    setBgColor("red");
   };
 
   return (
-    <div className="App" style={centerDiv}>
-      <h1 className="app-heading">Hello World</h1>
-
-      <p style={{ color: "red" }} className="paragraph">
-        This is my first React JS Application
-      </p>
-      <div style={header}>
-        <MyFirstComponent
-          name="John Doe"
-          description="who is a professional developer and a writer"
-        />
-        <MySecondComponent age="20" exam="Mathematics Exam" />
-      </div>
+    <div className="App" style={{ backgroundColor: bgColor }}>
+      {bgColor === "green" ? (
+        <p>Color is now green</p>
+      ) : (
+        <p>Color is now Red</p>
+      )}
+      <button onClick={turnGreen}>Click me</button>
+      {bgColor === "green" && <button onClick={reset}>Reset</button>}
     </div>
   );
 }
