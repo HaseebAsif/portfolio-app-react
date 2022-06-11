@@ -2,24 +2,18 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [bgColor, setBgColor] = useState("red");
+  const [counter, setCounter] = useState(0);
 
-  const turnGreen = () => {
-    setBgColor("green");
-  };
-  const reset = () => {
-    setBgColor("red");
+  const incrementCounter = () => {
+    for (let index = 0; index < 10; index++) {
+      setCounter((preCounter) => preCounter + 1);
+    }
   };
 
   return (
-    <div className="App" style={{ backgroundColor: bgColor }}>
-      {bgColor === "green" ? (
-        <p>Color is now green</p>
-      ) : (
-        <p>Color is now Red</p>
-      )}
-      <button onClick={turnGreen}>Click me</button>
-      {bgColor === "green" && <button onClick={reset}>Reset</button>}
+    <div className="App">
+      <h1>Counter: {counter}</h1>
+      <button onClick={incrementCounter}>Increment</button>
     </div>
   );
 }
