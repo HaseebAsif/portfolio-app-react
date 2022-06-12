@@ -1,32 +1,19 @@
-import { useState } from "react";
-import "./App.css";
+import React, { useState, useEffect } from "react";
 
-function App() {
-  const [submitting, setSubmitting] = useState(false);
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setSubmitting(true);
+const App = () => {
+  const [message, setMessage] = useState("Hi there, how are you?");
+
+  useEffect(() => {
+    console.log("trigger use effect hook");
 
     setTimeout(() => {
-      setSubmitting(false);
-    }, 3000);
-  };
+      setMessage("I'm fine, thanks for asking.");
+    }, 5000);
+  });
 
-  return (
-    <div className="App">
-      <h1>How About them Them Apples</h1>
-      {submitting && <div>Submitting Form...</div>}
-      <form onSubmit={handleSubmit}>
-        <fieldset>
-          <label htmlFor="">
-            <p>Name</p>
-            <input type="text" name="name" />
-          </label>
-        </fieldset>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  );
-}
+
+
+  return <h1>{message}</h1>;
+};
 
 export default App;
