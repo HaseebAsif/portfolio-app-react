@@ -1,14 +1,22 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import About from "./componenets/About";
-import Home from "./componenets/Home";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+
+const baseURL = "https://jsonplaceholder.typicode.com/todos/1";
 
 const App = () => {
+  const [value, setValue] = useState(null);
+  useEffect(() => {
+    axios.get(baseURL).then((response) => {
+      setValue(response.data);
+    });
+  }, []);
+
+  if (!value) return null;
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="about" element={<About />} />
-    </Routes>
+    <div>
+      <h1>{value.title}</h1>
+      <h2>{value.userId}</h2>
+    </div>
   );
 };
 
