@@ -1,19 +1,33 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useCallback } from "react";
+var funccount = new Set();
 
 const App = () => {
-  const [message, setMessage] = useState("Hi there, how are you?");
+  const [count, setCount] = useState(0);
+  const [number, setNumber] = useState(0);
 
-  useEffect(() => {
-    console.log("trigger use effect hook");
+  const incrementCounter = useCallback(() => {
+    setCount(count + 1);
+  }, [count]);
+  const decrementCounter = useCallback(() => {
+    setCount(count - 1);
+  }, [count]);
+  const incrementNumber = useCallback(() => {
+    setNumber(number + 1);
+  }, [number]);
 
-    setTimeout(() => {
-      setMessage("I'm fine, thanks for asking.");
-    }, 5000);
-  });
+  funccount.add(incrementCounter);
+  funccount.add(decrementCounter);
+  funccount.add(incrementNumber);
+  alert(funccount.size);
 
-
-
-  return <h1>{message}</h1>;
+  return (
+    <div>
+      Count: {count}
+      <button onClick={incrementCounter}>Increase counter</button>
+      <button onClick={decrementCounter}>Decrease Counter</button>
+      <button onClick={incrementNumber}>increase number</button>
+    </div>
+  );
 };
 
 export default App;
