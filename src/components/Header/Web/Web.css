@@ -1,21 +1,39 @@
-.Web{
-  display: flex;
-  flex: 1;
-  align-items: center;
+.web{
+    display: flex;
+    flex: 1;
+    align-items: center;
 }
+
 .web-option{
-  font-size: 20px;
-  margin-right: 16px;
-  font-weight: 700;
+    font-size: 20px;
+    margin-right: 16px;
+    font-weight: 700;
 }
+
 .web-option a{
-  text-decoration: none;
-  color: black;
-  display: flex;
-  align-items: center;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
 }
+
+.light-dark-option{
+    display: flex;
+    align-items: center;
+}
+
+
+.dark-web-options a{
+    color: white;
+}
+
+
 .option-icon{
-  display: flex;
-  align-items: center;
-  margin-right: 4px;
+    display: flex;
+    align-items: center;
+    margin-right: 4px;
+}
+
+.web-option:last-child{
+    margin-right: 0;
 }

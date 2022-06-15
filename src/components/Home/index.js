@@ -1,12 +1,19 @@
 import React from "react";
-import Header from "../Header";
+import "./Home.css";
+import Header from "../Header/index";
+import Footer from "../Footer/index";
+import ScrollToTop from "../Common/ScrollToTop";
+import Body from "../../Body";
 
-const Home = () => {
+function Home() {
   return (
-    <div>
+    <div className="home">
       <Header />
+      <Body />
+      <Footer />
+      <ScrollToTop />
     </div>
   );
-};
+}
 
 export default Home;

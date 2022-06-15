@@ -1,12 +1,16 @@
-* {
-  margin: 0;
+body{
+  font-family: 'Work Sans', sans-serif;
   padding: 0;
-  box-sizing: border-box;
+  margin: 0;
 }
-body {
-  font-family: "Work Sans", sans-serif;
+
+.app-container.light{
+  color: black;
+  background-color: white;
 }
-/* .app-container {
+
+.app-container.dark{
   color: white;
   background-color: black;
-} */
+}
+

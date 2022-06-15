@@ -1,11 +1,11 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
-import DarkMode from "./Context/DarkMode";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import DarkMode from './Context/DarkMode';
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
+ReactDOM.render(
   <DarkMode>
     <App />
-  </DarkMode>
+  </DarkMode>,
+  document.getElementById('root')
 );
