@@ -1,12 +1,13 @@
 import React from "react";
 import { useDarkMode } from "../../Context/DarkMode";
+import "./SkillsCard.css";
 
-const SkillsCard = ({ skill }) => {
+function SkillCard({ skill }) {
   const darkMode = useDarkMode();
   return (
     <div className="skill-card">
       {darkMode ? (
-        <div className="" skill-icon>
+        <div className="skill-icon">
           <i className={skill.darkiconClass}></i>
         </div>
       ) : (
@@ -14,9 +15,9 @@ const SkillsCard = ({ skill }) => {
           <i className={skill.iconClass}></i>
         </div>
       )}
-      <label skill-name>{skill.name}</label>
+      <label className="skill-name">{skill.name}</label>
     </div>
   );
-};
+}
 
-export default SkillsCard;
+export default SkillCard;
