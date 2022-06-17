@@ -2,6 +2,7 @@ import React from "react";
 import "./Body.css";
 import About from "./About/index";
 import Projects from "./Projects";
+import Work from "../../Body/Work/Work";
 import Skills from "../../Body/Skills/Skills";
 
 function Body() {
@@ -15,6 +16,9 @@ function Body() {
       </section>
       <section id="#Skills">
         <Skills />
+      </section>
+      <section id="#Work">
+        <Work />
       </section>
     </div>
   );
