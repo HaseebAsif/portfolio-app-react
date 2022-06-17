@@ -2,6 +2,8 @@ import React from "react";
 import { useDarkMode } from "../../Context/DarkMode";
 import aboutCodingLight from "../../assets/coding-light.png";
 import aboutCodingDark from "../../assets/coding-dark.png";
+import SocialContact from "../../Components/Common/Social-Contact";
+import "./About.css";
 
 const About = () => {
   const darkMode = useDarkMode();
@@ -10,15 +12,11 @@ const About = () => {
     <div className="about">
       <div className="about-top">
         <div className="about-info">
-          Hello There, I am{" "}
-          <br/>
-            <span
-              className={darkMode ? "info-name dark-info-name" : "info-name"}
-            >
-              John
-            </span>
-          <br/>
-          I am an expert Frontend Developer
+          Hello There, I am <br />
+          <span className={darkMode ? "info-name dark-info-name" : "info-name"}>
+            John
+          </span>
+          <br />I am an expert Frontend Developer
         </div>
         <div className="about-photo">
           <img
@@ -28,7 +26,9 @@ const About = () => {
           />
         </div>
       </div>
-      <div className="about-bottom">Social Component Here</div>
+      <div className="about-bottom">
+        <SocialContact />
+      </div>
     </div>
   );
 };
